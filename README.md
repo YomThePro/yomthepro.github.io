@@ -1,4 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YOM personal site
+
+## Content Studio
+
+Run the site locally with `pnpm dev`, then open [http://localhost:3000/studio](http://localhost:3000/studio).
+There you can change the Home, Writing, About, and Contact content, add writing entries, and save everything without editing code. The Studio saves to `app/_content/site.json`.
+
+Before publishing the changes, commit and deploy the updated `site.json` file as usual. A standard static host (including GitHub Pages) cannot save changes directly from a live website. If you later host this on a writable server, set `STUDIO_PASSWORD` in its environment to protect remote Studio access.
+
+## Editing the site manually
+
+- **All text and writing entries:** `app/_content/site.json`
+- **Page layout:** the matching files in `app/`
+- **Colours and visual layout:** `app/globals.css`
+
+Each `page.tsx` folder is a different page on the same site:
+
+- `app/page.tsx` → `/`
+- `app/writing/page.tsx` → `/writing`
+- `app/about/page.tsx` → `/about`
+- `app/contact/page.tsx` → `/contact`
+- `app/studio/page.tsx` → `/studio` (content manager)
+
+## Running the site
 
 ## Getting Started
 
