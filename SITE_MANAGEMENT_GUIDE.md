@@ -8,21 +8,19 @@ This website is a Next.js personal site with four public pages and one private c
 - `/writing` — writing archive
 - `/about` — about page
 - `/contact` — contact page
-- `/studio` — private content manager
+- `/studio` — static content editor
 
 The Studio was created so content can be updated from forms instead of editing React or CSS files.
 
 ## Using Studio
 
-1. Start the local website with `pnpm dev`.
-2. Visit `http://localhost:3000/studio`.
-3. Enter the Studio password configured in `.env.local`.
-4. Change the content you want.
-5. Select **Save changes** or **Save all changes**.
-6. Open **View site** to review the result.
-7. Commit and deploy the updated `app/_content/site.json` file when you are happy.
+1. Visit `/studio` on the live site, or run `pnpm dev` and visit `http://localhost:3000/studio`.
+2. Change the content you want.
+3. Select **Download changes** or **Download all changes**.
+4. In GitHub, replace `app/_content/site.json` with the downloaded file and commit the change.
+5. GitHub Actions builds and deploys the update automatically.
 
-The password is deliberately stored only in `.env.local`, which is ignored by Git. Do not put it in this guide, a commit, or a public message.
+GitHub Pages is a static host. It cannot securely use a Studio password or write files from the live website. Do not place a password in the static site because visitors could inspect it.
 
 ## What Studio can edit
 
@@ -68,9 +66,9 @@ The public pages read this content through `app/_content/site.ts`. This keeps th
 
 ## Important deployment note
 
-Studio saves to a local file. This is ideal while working locally: save in Studio, check the site, then commit and deploy the generated content change.
+Studio downloads an updated content file. This works both locally and on GitHub Pages: download it, replace `app/_content/site.json` in GitHub, and commit the file.
 
-Normal static hosts, including GitHub Pages, cannot write files from a live website. A remote always-editable dashboard would need an external content database or GitHub API integration. Do not expose a writable Studio online without authentication and persistent storage.
+GitHub Pages cannot write files from a live website. A remote always-editable, password-protected dashboard would need an external content database or GitHub API integration. Do not expose a writable Studio online without authentication and persistent storage.
 
 ## Design and code locations
 
@@ -80,7 +78,8 @@ Normal static hosts, including GitHub Pages, cannot write files from a live webs
 - `app/writing/page.tsx` — writing archive layout
 - `app/about/page.tsx` — about page layout
 - `app/contact/page.tsx` — contact page layout
-- `app/studio/` — password check, save action, and Studio interface
+- `app/studio/` — static Studio interface and content download
+- `.github/workflows/deploy-pages.yml` — GitHub Pages build and deployment workflow
 
 ## Comments and future features
 

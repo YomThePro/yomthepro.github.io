@@ -2,10 +2,14 @@
 
 ## Content Studio
 
-Run the site locally with `pnpm dev`, then open [http://localhost:3000/studio](http://localhost:3000/studio).
-There you can change the Home, Writing, About, and Contact content, add writing entries, and save everything without editing code. The Studio saves to `app/_content/site.json`.
+Open `/studio` on the live site or locally after running `pnpm dev`.
+There you can change the Home, Writing, About, and Contact content, add writing entries, and download an updated `site.json` file without editing code.
 
-Before publishing the changes, commit and deploy the updated `site.json` file as usual. A standard static host (including GitHub Pages) cannot save changes directly from a live website. If you later host this on a writable server, set `STUDIO_PASSWORD` in its environment to protect remote Studio access.
+To publish Studio changes, replace `app/_content/site.json` in the GitHub repository with the downloaded file and commit it. GitHub Actions will deploy the update automatically.
+
+## GitHub Pages deployment
+
+The repository includes a GitHub Actions workflow that builds and publishes the site after every push to `main`. In GitHub, open **Settings → Pages**, set **Source** to **GitHub Actions**, then push your changes to `main`.
 
 ## Editing the site manually
 
