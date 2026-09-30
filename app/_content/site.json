@@ -7,17 +7,21 @@
     "signal": "Now transmitting",
     "footerTagline": "Made slowly, somewhere on Earth.",
     "footerCopyright": "© 2026",
-    "homeTitle": "YOM. — Personal frequency",
+    "homeTitle": "YOM. — Just About Me :3",
     "homeDescription": "Notes, ideas, and moments from Yom."
   },
   "home": {
-    "eyebrow": "Personal frequency / 001",
+    "eyebrow": "A bit about me / 001",
     "headlineStart": "A place for",
     "headlineEmphasis": "thoughts",
     "headlineEnd": "that won’t fit in a caption.",
     "intro": "I’m Yom — a curious human collecting ideas, projects, and little observations from the way through.",
-    "topics": ["Personal essays", "Notes", "Creative work"],
-    "writingLabel": "Recent transmissions",
+    "topics": [
+      "Personal essays",
+      "Notes",
+      "Creative work"
+    ],
+    "writingLabel": "Recent Collections",
     "writingStart": "From the",
     "writingEmphasis": "notebook.",
     "archiveLabel": "View the archive"
@@ -41,15 +45,33 @@
   },
   "contact": {
     "eyebrow": "Let’s talk",
-    "email": "hello@example.com",
+    "email": "yomitha.sasath13@gmail.com",
     "headlineStart": "Have something",
     "headlineEmphasis": "good",
     "headlineEnd": "to share?",
     "intro": "For a project, a thoughtful question, or simply a hello — my inbox is open."
   },
   "entries": [
-    { "number": "01", "date": "SEPTEMBER 04, 2026", "title": "I’m learning to leave room for wonder.", "excerpt": "Somewhere between building things and becoming someone, I found a quieter kind of ambition.", "category": "THOUGHTS" },
-    { "number": "02", "date": "AUGUST 18, 2026", "title": "A small collection of things I’m drawn to lately.", "excerpt": "Blue hour walks, interfaces with a point of view, and making space to be delightfully curious.", "category": "FIELD NOTES" },
-    { "number": "03", "date": "JULY 29, 2026", "title": "On making the internet feel a little more human.", "excerpt": "The corners of the web I love most still feel like someone left the light on just for you.", "category": "DIGITAL LIFE" }
+    {
+      "number": "01",
+      "date": "SEPTEMBER 04, 2026",
+      "title": "I’m learning to leave room for wonder.",
+      "excerpt": "Somewhere between building things and becoming someone, I found a quieter kind of ambition.",
+      "category": "THOUGHTS"
+    },
+    {
+      "number": "02",
+      "date": "AUGUST 18, 2026",
+      "title": "A small collection of things I’m drawn to lately.",
+      "excerpt": "Blue hour walks, interfaces with a point of view, and making space to be delightfully curious.",
+      "category": "FIELD NOTES"
+    },
+    {
+      "number": "03",
+      "date": "JULY 29, 2026",
+      "title": "On making the internet feel a little more human.",
+      "excerpt": "The corners of the web I love most still feel like someone left the light on just for you.",
+      "category": "DIGITAL LIFE"
+    }
   ]
 }
