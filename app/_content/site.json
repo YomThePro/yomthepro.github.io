@@ -9,20 +9,20 @@
     "navProgress": "Progress",
     "signal": "Now transmitting",
     "footerTagline": "Made slowly, somewhere on Earth.",
-    "footerCopyright": "\u00a9 2026",
-    "homeTitle": "YOM. \u2014 Just About Me :3",
+    "footerCopyright": "© 2026",
+    "homeTitle": "YOM. — Just About Me :3",
     "homeDescription": "Notes, ideas, and moments from Yom."
   },
   "home": {
     "eyebrow": "A bit about me / 001",
     "headlineStart": "A place for",
     "headlineEmphasis": "thoughts",
-    "headlineEnd": "that won\u2019t fit in a caption.",
-    "intro": "I\u2019m Yom \u2014 a curious human collecting ideas, projects, and little observations from the way through.",
+    "headlineEnd": "that won’t fit in a caption.",
+    "intro": "I’m Yom — a curious human collecting ideas, projects, and little observations from the way through.",
     "topics": [
       "Random thoughts",
       "Notes",
-      "Things I\u2019m exploring"
+      "Things I’m exploring"
     ],
     "writingLabel": "Recent Collections",
     "writingStart": "From the",
@@ -34,7 +34,7 @@
     "headlineStart": "Notes from the",
     "headlineEmphasis": "notebook.",
     "headlineEnd": "",
-    "intro": "Ideas, observations, and works in progress \u2014 all gathered in one place."
+    "intro": "Ideas, observations, and works in progress — all gathered in one place."
   },
   "about": {
     "eyebrow": "A human, briefly",
@@ -43,16 +43,16 @@
     "headlineEnd": "than noise.",
     "intro": "I make things for the internet and write about the bits that make me pause.",
     "cardTitle": "This is my small corner of the internet.",
-    "body": "I use it to share what I\u2019m exploring \u2014 projects, questions, ideas, and the occasional unfinished thought. No performance, just the good stuff.",
+    "body": "I use it to share what I’m exploring — projects, questions, ideas, and the occasional unfinished thought. No performance, just the good stuff.",
     "contactLabel": "Say hello"
   },
   "contact": {
-    "eyebrow": "Let\u2019s talk",
+    "eyebrow": "Let’s talk",
     "email": "yomitha.sasath13@gmail.com",
     "headlineStart": "Have something",
     "headlineEmphasis": "good",
     "headlineEnd": "to share?",
-    "intro": "For a project, a thoughtful question, or simply a hello \u2014 my inbox is open."
+    "intro": "For a project, a thoughtful question, or simply a hello — my inbox is open."
   },
   "pictures": {
     "eyebrow": "Frames / kept",
@@ -65,7 +65,7 @@
         "id": "blue-hour",
         "title": "Blue hour, no signal",
         "caption": "The ten minutes after sunset when the street looks like it belongs to a film.",
-        "context": "Took this while walking home without a podcast on. The kind of quiet that only lasts a few weeks a year.",
+        "context": "Took this while walking home. The kind of quiet that only lasts a few weeks a year.",
         "place": "Colombo",
         "date": "SEPTEMBER 2026",
         "image": "",
@@ -95,10 +95,10 @@
   },
   "progress": {
     "eyebrow": "Currently",
-    "headlineStart": "Things I\u2019m moving",
+    "headlineStart": "Things I’m moving",
     "headlineEmphasis": "forward on.",
-    "headlineEnd": "",
-    "intro": "Loose goals I\u2019m working towards. Percentages are honest, not aspirational.",
+    "headlineEnd": "Slow & Steadily.",
+    "intro": "Loose goals I’m working towards. Percentages are honest, not aspirational.",
     "summaryLabel": "Overall",
     "groups": [
       {
@@ -106,7 +106,7 @@
         "label": "Reading",
         "goal": "12 books this year",
         "value": 58,
-        "note": "Eight down. Currently deep in a book about maps."
+        "note": "Eight down. Currently deep in a book about Indians."
       },
       {
         "id": "coding",
@@ -147,14 +147,14 @@
     {
       "number": "01",
       "date": "SEPTEMBER 04, 2026",
-      "title": "I\u2019m learning to leave room for wonder.",
+      "title": "I’m learning to leave room for wonder.",
       "excerpt": "Somewhere between building things and becoming someone, I found a quieter kind of ambition.",
       "category": "THOUGHTS"
     },
     {
       "number": "02",
       "date": "AUGUST 18, 2026",
-      "title": "A small collection of things I\u2019m drawn to lately.",
+      "title": "A small collection of things I’m drawn to lately.",
       "excerpt": "Blue hour walks, interfaces with a point of view, and making space to be delightfully curious.",
       "category": "FIELD NOTES"
     },
