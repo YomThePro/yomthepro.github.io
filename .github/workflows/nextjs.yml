@@ -37,12 +37,16 @@ jobs:
       # `cache: pnpm` restore has no store path to work with.
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 12.3.4
+          run_install: false
 
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: "22"
           cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
