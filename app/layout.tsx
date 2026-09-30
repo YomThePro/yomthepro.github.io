@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <CursorStyle style={extras.cursor} color={extras.cursorColor} />
         <FirstVisitLoader wordmark={site.name} />
         {children}
-        {extras.musicPath ? <MusicPlayer src={extras.musicPath} label={extras.musicLabel} volume={volume} /> : null}
+        {extras.musicTracks.length ? <MusicPlayer tracks={extras.musicTracks} label={extras.musicLabel} volume={volume} /> : null}
       </body>
     </html>
   );

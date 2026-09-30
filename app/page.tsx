@@ -17,7 +17,10 @@ export default async function Home() {
           <div className="hero-actions"><Link className="button button-solid" href="/writing">Read the latest <b>↘</b></Link><Link className="button button-quiet" href="/about">A little about me <b>→</b></Link></div>
         </div>
         <div className="orbit" aria-hidden="true">
-          <div className="orbit-ring ring-a" /><div className="orbit-ring ring-b" /><div className="orbit-ring ring-c" /><div className="orbit-dot dot-a" /><div className="orbit-dot dot-b" />
+          <div className="orbit-ring ring-a" /><div className="orbit-ring ring-b" /><div className="orbit-ring ring-c" />
+          <div className="orbit-arm arm-a"><i className="orbit-dot dot-a" /></div>
+          <div className="orbit-arm arm-b"><i className="orbit-dot dot-b" /></div>
+          <div className="orbit-arm arm-c"><i className="orbit-dot dot-c" /></div>
           <div className="orbit-core"><span>Y</span></div><p className="orbit-label label-a">thinking<br />out loud</p><p className="orbit-label label-b">est. 2026</p>
         </div>
       </section>

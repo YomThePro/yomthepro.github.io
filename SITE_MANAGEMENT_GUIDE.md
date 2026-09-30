@@ -29,9 +29,19 @@ Both are off by default and are set in Studio under **Cursor & music**.
 
 - **Cursor** accepts `none` (default) or `dot`, plus a hex colour. The dot cursor only
   applies on devices with a fine pointer, so phones and tablets keep normal behaviour.
-- **Music** needs a file. Drop an `.mp3`, `.m4a`, or `.wav` into `public/audio/`, then enter
-  its path, for example `/audio/theme.mp3`. With the path blank, no player appears at all.
-  Music never autoplays — the visitor starts it, and their choice is remembered.
+- **Music** is a playlist, set in Studio under **Music tracks** (one path per line). Drop
+  an `.mp3`, `.m4a`, or `.wav` into `public/audio/`, then list its path, e.g.
+  `/audio/theme.mp3`. Next serves `public/` from the **root**, so
+  `public/audio/theme.mp3` is requested as `/audio/theme.mp3` — never
+  `/public/audio/theme.mp3`. Getting this wrong 404s and the player silently does nothing.
+  Filenames containing spaces or brackets are fine; each path is URL-encoded for you.
+  Tracks play in order, move to the next automatically when one finishes, and the last
+  wraps to the first, so it plays continuously once switched on. A file that fails to
+  load is skipped instead of stalling the playlist. With the list empty, no player appears.
+  Music never autoplays on first visit — the visitor clicks play once, and that choice is
+  remembered (`localStorage` key `yom-music`). Do not add a `play()` call outside the
+  player's own effects: the autoplay policy blocks it, and a visitor who declined music
+  would get it anyway.
 
 ## Studio password
 

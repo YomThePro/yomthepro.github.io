@@ -1,63 +1,56 @@
-# YOM personal site
+# YOM.
 
-## Content Studio
+A small personal site for notes, pictures, progress, and the occasional hello.
 
-Open `/studio` on the live site or locally after running `pnpm dev`.
-There you can change the Home, Writing, About, and Contact content, add writing entries, and download an updated `site.json` file without editing code.
+Built with Next.js and exported as a static site, so it runs on GitHub Pages
+with no server and no database.
 
-To publish Studio changes, replace `app/_content/site.json` in the GitHub repository with the downloaded file and commit it. GitHub Actions will deploy the update automatically.
+## The pages
 
-## GitHub Pages deployment
+| Page | What it is |
+| --- | --- |
+| `/` | The front door: headline, topics, and the most recent notes |
+| `/writing` | Every note, newest first |
+| `/pictures` | Collected frames, each with a short note about why it was kept |
+| `/progress` | Goals with progress bars and an overall average |
+| `/about` | A brief introduction |
+| `/contact` | Email address, with a one-click copy button |
+| `/studio` | The private content editor |
 
-The repository includes a GitHub Actions workflow that builds and publishes the site after every push to `main`. In GitHub, open **Settings → Pages**, set **Source** to **GitHub Actions**, then push your changes to `main`.
+## Things worth knowing
 
-## Editing the site manually
+**The opening animation plays once.** A first-time visitor sees a short
+intro; after that the site goes straight to the content. It never appears for
+visitors who have reduced-motion switched on, and it stays out of the way of
+Studio.
 
-- **All text and writing entries:** `app/_content/site.json`
-- **Page layout:** the matching files in `app/`
-- **Colours and visual layout:** `app/globals.css`
+**Studio is password-locked, but that is not real security.** The site is a
+static export, so the password ships inside the public JavaScript and anyone
+reading the source can find it. It keeps casual visitors out of the editor. A
+genuinely private editor would need a server.
 
-Each `page.tsx` folder is a different page on the same site:
+**Content lives in one file.** Every word, picture, and goal comes from
+`app/_content/site.json`. Studio edits that file and hands it back to you;
+commit it and the site redeploys.
 
-- `app/page.tsx` → `/`
-- `app/writing/page.tsx` → `/writing`
-- `app/about/page.tsx` → `/about`
-- `app/contact/page.tsx` → `/contact`
-- `app/studio/page.tsx` → `/studio` (content manager)
+**The music player is opt-in.** It appears only once you give it a track, and
+it never starts playing on its own. The cursor style is off by default.
 
-## Running the site
+## Design
 
-## Getting Started
+Ink, paper, lime, and purple, with a serif italic for emphasis. Colours and
+spacing live in `app/globals.css`.
 
-First, run the development server:
+## Running it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+pnpm build    # static output into out/
+pnpm lint
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment is handled by GitHub Actions on every push to `main`.

@@ -32,7 +32,6 @@ html[data-intro="on"] body { overflow: hidden; }
 .loader-bar-fill { height: 100%; width: 0; background: var(--purple); animation: loader-fill 1.7s cubic-bezier(.4,0,.2,1) forwards; }
 .loader-label { margin: 0; text-transform: uppercase; font: 700 9px/1 Arial,sans-serif; letter-spacing: .17em; color: rgba(27,27,33,.55); }
 @keyframes loader-spin { to { transform: rotate(360deg) scale(.78,1); } }
-@keyframes loader-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
 @keyframes loader-fill { 0% { width: 0; } 60% { width: 78%; } 100% { width: 100%; } }
 
 /* ---------- Pictures ---------- */
@@ -87,6 +86,7 @@ html[data-intro="on"] body { overflow: hidden; }
   .gallery-foot { flex-direction: column; align-items: flex-start; padding: 36px 0 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .orbit-ring, .orbit-arm { animation: none; }
   .loader-ring, .loader-core, .loader-bar-fill { animation: none; }
   .loader-bar-fill { width: 100%; }
   .bar-fill { transition: none; }
@@ -111,7 +111,14 @@ html[data-cursor="dot"] .entry-arrow, html[data-cursor="dot"] .copy-button, html
 .copy-button:hover { transform: translateY(-2px); background: rgba(255,255,255,.5); }
 .copy-button.is-copied { background: var(--lime); border-color: var(--lime); }
 
-.music-player { position: fixed; left: 20px; bottom: 20px; z-index: 60; }
+.music-player { position: fixed; left: 20px; bottom: 20px; z-index: 60; max-width: min(360px, calc(100vw - 40px)); }
+.music-bar { display: flex; align-items: center; gap: 8px; background: rgba(245,243,238,.92); backdrop-filter: blur(7px); border: 1px solid var(--line); border-radius: 100px; padding: 6px 8px 6px 6px; box-shadow: 0 8px 26px rgba(27,27,33,.10); }
+.music-meta { display: flex; align-items: baseline; gap: 7px; min-width: 0; flex: 1; }
+.music-name { font: 700 10px/1.3 Arial,sans-serif; letter-spacing: .04em; color: rgba(27,27,33,.78); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px; }
+.music-count { font: 700 9px/1 Arial,sans-serif; color: var(--purple); white-space: nowrap; }
+.music-skip { border: 0; background: transparent; color: rgba(27,27,33,.6); font-size: 17px; line-height: 1; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; transition: background .2s, color .2s; }
+.music-skip:hover { background: rgba(118,84,255,.12); color: var(--purple); }
+.music-bar .music-toggle { border: 0; background: transparent; backdrop-filter: none; padding: 9px 13px; }
 .music-toggle { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: rgba(245,243,238,.9); backdrop-filter: blur(7px); color: var(--ink); border-radius: 100px; font: 800 10px/1 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; padding: 11px 15px; cursor: pointer; }
 .music-bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 11px; }
 .music-bars i { width: 2px; height: 4px; background: var(--purple); display: block; }
@@ -155,3 +162,24 @@ img { max-width: 100%; height: auto; }
   .nav-signal { display: none; }
   .nav { justify-content: space-between; }
 }
+
+/* ---------- Homepage orbit: the loader's atom, left running ---------- */
+/* Rings spin at different speeds and directions, like the loader.
+   A dot held inside a rotated+scaled parent always traces a circle (rotation
+   preserves distance), so the arms are NOT scaled: each one is a plain spinner
+   that carries its dot out to a chosen radius. Three orbits, three electrons. */
+.orbit-ring { animation: orbit-a 14s linear infinite; }
+.ring-b { animation: orbit-b 9s linear infinite reverse; }
+.ring-c { animation: orbit-c 20s linear infinite; }
+.orbit-arm { position: absolute; inset: 0; }
+.arm-a { animation: orbit-a 14s linear infinite; }
+.arm-b { animation: orbit-b 9s linear infinite reverse; }
+.arm-c { animation: orbit-c 20s linear infinite; }
+.orbit-dot { top: 50%; left: 50%; right: auto; bottom: auto; }
+.dot-a { margin: -7.5px 0 0 -7.5px; transform: translateY(-202px); }
+.dot-b { margin: -4px 0 0 -4px; transform: translateY(-160px); }
+.dot-c { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; transform: translateY(-117px); background: var(--ink); }
+@keyframes orbit-a { from { transform: rotate(-25deg); } to { transform: rotate(335deg); } }
+@keyframes orbit-b { from { transform: rotate(36deg); } to { transform: rotate(-324deg); } }
+@keyframes orbit-c { from { transform: rotate(-70deg); } to { transform: rotate(290deg); } }
+@keyframes loader-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }

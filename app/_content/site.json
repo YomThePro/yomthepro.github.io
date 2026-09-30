@@ -134,7 +134,12 @@
   "extras": {
     "cursor": "none",
     "cursorColor": "#7654ff",
-    "musicPath": "/audio/chill-bg1.mp3",
+    "musicTracks": [
+      "/audio/chill-bg1.mp3",
+      "/audio/13am.mp3",
+      "/audio/Glowing Snow.mp3",
+      "/audio/70. The place where it rained (DELTARUNE Chapter 34 Soundtrack) - Toby Fox.mp3"
+    ],
     "musicLabel": "Background music",
     "musicVolume": 35
   },

@@ -12,7 +12,7 @@ export type SiteContent = {
   contact: { eyebrow: string; email: string; headlineStart: string; headlineEmphasis: string; headlineEnd: string; intro: string };
   pictures: { eyebrow: string; headlineStart: string; headlineEmphasis: string; headlineEnd: string; intro: string; items: Picture[] };
   progress: { eyebrow: string; headlineStart: string; headlineEmphasis: string; headlineEnd: string; intro: string; summaryLabel: string; groups: ProgressGroup[] };
-  extras: { cursor: string; cursorColor: string; musicPath: string; musicLabel: string; musicVolume: number };
+  extras: { cursor: string; cursorColor: string; musicTracks: string[]; musicLabel: string; musicVolume: number };
   entries: Entry[];
 };
 
@@ -22,7 +22,7 @@ export const contentPath = path.join(process.cwd(), "app", "_content", "site.jso
 // here keeps every page rendering instead of throwing on a missing field.
 const emptyPictures = { eyebrow: "", headlineStart: "", headlineEmphasis: "", headlineEnd: "", intro: "", items: [] };
 const emptyProgress = { eyebrow: "", headlineStart: "", headlineEmphasis: "", headlineEnd: "", intro: "", summaryLabel: "Overall", groups: [] };
-const emptyExtras = { cursor: "none", cursorColor: "#7654ff", musicPath: "", musicLabel: "Background music", musicVolume: 35 };
+const emptyExtras = { cursor: "none", cursorColor: "#7654ff", musicTracks: [] as string[], musicLabel: "Background music", musicVolume: 35 };
 
 export async function getSiteContent(): Promise<SiteContent> {
   const parsed = JSON.parse(await readFile(contentPath, "utf8")) as Partial<SiteContent>;
@@ -37,6 +37,6 @@ export async function getSiteContent(): Promise<SiteContent> {
     entries: parsed.entries ?? [],
     pictures: { ...emptyPictures, ...(parsed.pictures ?? {}) },
     progress: { ...emptyProgress, ...(parsed.progress ?? {}) },
-    extras: { ...emptyExtras, ...(parsed.extras ?? {}) },
+    extras: { ...emptyExtras, ...(parsed.extras ?? {}), musicTracks: (parsed.extras?.musicTracks ?? []).filter((track) => typeof track === "string" && track.trim() !== "") },
   };
 }
