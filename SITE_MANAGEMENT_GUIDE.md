@@ -2,15 +2,44 @@
 
 ## What was built
 
-This website is a Next.js personal site with four public pages and one private content dashboard:
+This website is a Next.js personal site with six public pages and one private content dashboard:
 
 - `/` — home page
 - `/writing` — writing archive
+- `/pictures` — picture gallery, each frame with a context box
+- `/progress` — per-goal progress bars with an overall average
 - `/about` — about page
 - `/contact` — contact page
-- `/studio` — static content editor
+- `/studio` — static content editor, behind a password screen
 
 The Studio was created so content can be updated from forms instead of editing React or CSS files.
+
+## First-visit intro
+
+The loading animation plays once, the first time somebody opens the site. A small blocking
+script in the document head records a `yom-intro-seen` flag in the browser's local storage
+before the page paints, so a first-time visitor never sees the page flash up and then get
+covered. Returning visitors skip it entirely. It never appears for visitors who have
+`prefers-reduced-motion` set, and it stays out of the way of Studio. To watch it again, clear
+that local storage key in the browser dev tools.
+
+## Cursor and background music
+
+Both are off by default and are set in Studio under **Cursor & music**.
+
+- **Cursor** accepts `none` (default) or `dot`, plus a hex colour. The dot cursor only
+  applies on devices with a fine pointer, so phones and tablets keep normal behaviour.
+- **Music** needs a file. Drop an `.mp3`, `.m4a`, or `.wav` into `public/audio/`, then enter
+  its path, for example `/audio/theme.mp3`. With the path blank, no player appears at all.
+  Music never autoplays — the visitor starts it, and their choice is remembered.
+
+## Studio password
+
+Studio asks for a password before showing the editor. This is a **client-side lock only**.
+The site is a static export, so the password ships inside the public JavaScript bundle and
+anyone who views source can read it. It keeps casual visitors out of the editor; it does not
+protect anything, and it is not a substitute for server authentication. A genuinely private
+editor needs a server, an external content database, or GitHub API authentication.
 
 ## Using Studio
 
@@ -27,7 +56,7 @@ GitHub Pages is a static host. It cannot securely use a Studio password or write
 ### Site settings
 
 - Site name and wordmark text
-- Navigation labels
+- Navigation labels, including Pictures and Progress
 - Status label in the header
 - Footer message and copyright
 - Browser title and search-engine description
@@ -43,6 +72,24 @@ GitHub Pages is a static host. It cannot securely use a Studio password or write
 - Archive label, headline, and introduction
 - Every writing entry’s date, category, title, and short description
 - Add and remove writing entries
+
+### Pictures page
+
+- Intro label, headline, and introduction
+- Every picture’s title, short caption, context box, place, date, frame colour, and image path
+- Add and remove pictures
+
+Leave a picture’s **image path** empty to keep the styled placeholder frame. To use a real
+photo, put the file in `public/` and enter its path, for example `/pictures/blue-hour.jpg`.
+Frame colour accepts `lime`, `purple`, or `ink`.
+
+### Progress page
+
+- Intro label, headline, introduction, and the overall summary label
+- Every goal’s label, target, percentage (a slider), and note
+- Add and remove goals
+
+The dark summary bar at the top is the average of all goals and is calculated automatically.
 
 ### About page
 
@@ -72,12 +119,17 @@ GitHub Pages cannot write files from a live website. A remote always-editable, p
 
 ## Design and code locations
 
-- `app/globals.css` — colours, spacing, responsive design, and Studio styling
+- `app/globals.css` — colours, spacing, responsive design, Studio styling, intro animation, gallery and progress-bar styling
 - `app/_components/site-chrome.tsx` — shared header and footer
+- `app/_components/first-visit-loader.tsx` — once-per-visitor loading animation
 - `app/page.tsx` — home page layout
 - `app/writing/page.tsx` — writing archive layout
+- `app/pictures/page.tsx` — picture gallery layout
+- `app/progress/page.tsx` — progress page layout
+- `app/progress/progress-bars.tsx` — animated bar client component
 - `app/about/page.tsx` — about page layout
 - `app/contact/page.tsx` — contact page layout
+- `app/studio/studio-gate.tsx` — Studio password screen
 - `app/studio/` — static Studio interface and content download
 - `.github/workflows/deploy-pages.yml` — GitHub Pages build and deployment workflow
 

@@ -1,25 +1,28 @@
 {
   "site": {
     "name": "YOM.",
+    "navHome": "Home",
     "navWriting": "Writing",
     "navAbout": "About",
     "navContact": "Contact",
+    "navPictures": "Pictures",
+    "navProgress": "Progress",
     "signal": "Now transmitting",
     "footerTagline": "Made slowly, somewhere on Earth.",
-    "footerCopyright": "© 2026",
-    "homeTitle": "YOM. — Just About Me :3",
+    "footerCopyright": "\u00a9 2026",
+    "homeTitle": "YOM. \u2014 Just About Me :3",
     "homeDescription": "Notes, ideas, and moments from Yom."
   },
   "home": {
     "eyebrow": "A bit about me / 001",
     "headlineStart": "A place for",
     "headlineEmphasis": "thoughts",
-    "headlineEnd": "that won’t fit in a caption.",
-    "intro": "I’m Yom — a curious human collecting ideas, projects, and little observations from the way through.",
+    "headlineEnd": "that won\u2019t fit in a caption.",
+    "intro": "I\u2019m Yom \u2014 a curious human collecting ideas, projects, and little observations from the way through.",
     "topics": [
       "Random thoughts",
       "Notes",
-      "Things I’m exploring"
+      "Things I\u2019m exploring"
     ],
     "writingLabel": "Recent Collections",
     "writingStart": "From the",
@@ -31,7 +34,7 @@
     "headlineStart": "Notes from the",
     "headlineEmphasis": "notebook.",
     "headlineEnd": "",
-    "intro": "Ideas, observations, and works in progress — all gathered in one place."
+    "intro": "Ideas, observations, and works in progress \u2014 all gathered in one place."
   },
   "about": {
     "eyebrow": "A human, briefly",
@@ -40,29 +43,113 @@
     "headlineEnd": "than noise.",
     "intro": "I make things for the internet and write about the bits that make me pause.",
     "cardTitle": "This is my small corner of the internet.",
-    "body": "I use it to share what I’m exploring — projects, questions, ideas, and the occasional unfinished thought. No performance, just the good stuff.",
+    "body": "I use it to share what I\u2019m exploring \u2014 projects, questions, ideas, and the occasional unfinished thought. No performance, just the good stuff.",
     "contactLabel": "Say hello"
   },
   "contact": {
-    "eyebrow": "Let’s talk",
+    "eyebrow": "Let\u2019s talk",
     "email": "yomitha.sasath13@gmail.com",
     "headlineStart": "Have something",
     "headlineEmphasis": "good",
     "headlineEnd": "to share?",
-    "intro": "For a project, a thoughtful question, or simply a hello — my inbox is open."
+    "intro": "For a project, a thoughtful question, or simply a hello \u2014 my inbox is open."
+  },
+  "pictures": {
+    "eyebrow": "Frames / kept",
+    "headlineStart": "A few pictures from",
+    "headlineEmphasis": "along the way.",
+    "headlineEnd": "",
+    "intro": "Photographs and sketches collected here, each with a note about why I kept it.",
+    "items": [
+      {
+        "id": "blue-hour",
+        "title": "Blue hour, no signal",
+        "caption": "The ten minutes after sunset when the street looks like it belongs to a film.",
+        "context": "Took this while walking home without a podcast on. The kind of quiet that only lasts a few weeks a year.",
+        "place": "Colombo",
+        "date": "SEPTEMBER 2026",
+        "image": "",
+        "tone": "lime"
+      },
+      {
+        "id": "desk-drawing",
+        "title": "Desk, mid-thought",
+        "caption": "An interface idea I sketched on the back of a receipt.",
+        "context": "Drew this to test a layout idea I could not get out of my head. Still not sure it works, still not willing to throw it away.",
+        "place": "Home desk",
+        "date": "AUGUST 2026",
+        "image": "",
+        "tone": "purple"
+      },
+      {
+        "id": "first-site",
+        "title": "This site, day one",
+        "caption": "Screenshot of the very first version of this corner of the internet.",
+        "context": "Saved before I started rewriting everything. A reminder that finished is a choice, not a requirement.",
+        "place": "Screen",
+        "date": "JULY 2026",
+        "image": "",
+        "tone": "ink"
+      }
+    ]
+  },
+  "progress": {
+    "eyebrow": "Currently",
+    "headlineStart": "Things I\u2019m moving",
+    "headlineEmphasis": "forward on.",
+    "headlineEnd": "",
+    "intro": "Loose goals I\u2019m working towards. Percentages are honest, not aspirational.",
+    "summaryLabel": "Overall",
+    "groups": [
+      {
+        "id": "reading",
+        "label": "Reading",
+        "goal": "12 books this year",
+        "value": 58,
+        "note": "Eight down. Currently deep in a book about maps."
+      },
+      {
+        "id": "coding",
+        "label": "Coding",
+        "goal": "Ship 4 side projects",
+        "value": 75,
+        "note": "Three shipped, fourth one is this site."
+      },
+      {
+        "id": "writing",
+        "label": "Writing",
+        "goal": "Publish 24 notes",
+        "value": 33,
+        "note": "Eight notes published. Prose is the slow part."
+      },
+      {
+        "id": "moving",
+        "label": "Moving",
+        "goal": "150 km walked",
+        "value": 42,
+        "note": "Mostly evening laps. The sunrise walk remains aspirational."
+      }
+    ]
+  },
+  "extras": {
+    "cursor": "none",
+    "cursorColor": "#7654ff",
+    "musicPath": "/audio/chill-bg1.mp3",
+    "musicLabel": "Background music",
+    "musicVolume": 35
   },
   "entries": [
     {
       "number": "01",
       "date": "SEPTEMBER 04, 2026",
-      "title": "I’m learning to leave room for wonder.",
+      "title": "I\u2019m learning to leave room for wonder.",
       "excerpt": "Somewhere between building things and becoming someone, I found a quieter kind of ambition.",
       "category": "THOUGHTS"
     },
     {
       "number": "02",
       "date": "AUGUST 18, 2026",
-      "title": "A small collection of things I’m drawn to lately.",
+      "title": "A small collection of things I\u2019m drawn to lately.",
       "excerpt": "Blue hour walks, interfaces with a point of view, and making space to be delightfully curious.",
       "category": "FIELD NOTES"
     },
